@@ -1,0 +1,130 @@
+{
+    "commands": [
+      {
+        "name": "set_room",
+        "description": "Sets the dimensions of the room.",
+        "parameters": [
+          {"name": "width", "type": "float", "required": true},
+          {"name": "depth", "type": "float", "required": true},
+          {"name": "height", "type": "float", "required": true}
+        ]
+      },
+      {
+        "name": "create_object",
+        "description": "Creates an object with specified dimensions and optional position.",
+        "parameters": [
+          {"name": "description", "type": "string", "required": true},
+          {"name": "width", "type": "float", "required": true},
+          {"name": "depth", "type": "float", "required": true},
+          {"name": "height", "type": "float", "required": true},
+          {"name": "quantity", "type": "integer", "required": true}
+        ]
+      },
+      {
+        "name": "place_relative",
+        "description": "Places an object relative to another object in a specified direction.",
+        "parameters": [
+          {"name": "target_desc", "type": "string", "required": true},
+          {"name": "ref_desc", "type": "string", "required": true},
+          {"name": "direction", "type": "string", "required": true},
+          {"name": "distance", "type": "float", "required": true},
+          {"name": "offset_x", "type": "float", "required": false, "default": 0},
+          {"name": "offset_y", "type": "float", "required": false, "default": 0}
+        ]
+      },
+      {
+        "name": "align_object",
+        "description": "Aligns an object with another object based on anchor points, optionally specifying direction for edge alignments to place the target next to the reference.",
+        "parameters": [
+          {"name": "target_name", "type": "string", "required": true},
+          {"name": "mode", "type": "string", "required": true},
+          {"name": "target_anchor", "type": "string", "required": true},
+          {"name": "ref_name", "type": "string", "required": true},
+          {"name": "ref_anchor", "type": "string", "required": true},
+          {"name": "offset", "type": "float", "required": false, "default": 0.2},
+          {"name": "direction", "type": "string", "required": false, "default": null}
+        ]
+      },
+      {
+        "name": "place_on_top",
+        "description": "Places an object on top of another object.",
+        "parameters": [
+          {"name": "top_obj_desc", "type": "string", "required": true},
+          {"name": "bottom_obj_desc", "type": "string", "required": true},
+          {"name": "x_offset", "type": "float", "required": false, "default": 0},
+          {"name": "y_offset", "type": "float", "required": false, "default": 0},
+          {"name": "z_offset", "type": "float", "required": false, "default": 0}
+        ]
+      },
+      {
+        "name": "mount_on_wall",
+        "description": "Mounts an object on a specified wall.",
+        "parameters": [
+          {"name": "obj_desc", "type": "string", "required": true},
+          {"name": "wall", "type": "string", "required": true},
+          {"name": "distance", "type": "float", "required": false, "default": 0.05},
+          {"name": "position", "type": "float", "required": false, "default": 0.5},
+          {"name": "height", "type": "float", "required": false, "default": null}
+        ]
+      },
+      {
+        "name": "move_object",
+        "description": "Moves an object in a specified direction by a distance.",
+        "parameters": [
+          {"name": "obj_desc", "type": "string", "required": true},
+          {"name": "direction", "type": "string", "required": true},
+          {"name": "distance", "type": "float", "required": true}
+        ]
+      },
+      {
+        "name": "rotate_object",
+        "description": "Rotates an object by a number of turns.",
+        "parameters": [
+          {"name": "obj_desc", "type": "string", "required": true},
+          {"name": "turns", "type": "float", "required": false, "default": 1}
+        ]
+      },
+      {
+        "name": "place_in_room_corner",
+        "description": "Places an object in a room corner.",
+        "parameters": [
+          {"name": "obj_desc", "type": "string", "required": true},
+          {"name": "corner", "type": "string", "required": true},
+          {"name": "wall_distance", "type": "float", "required": false, "default": 0.2},
+          {"name": "facing", "type": "string", "required": false, "default": null}
+        ]
+      },
+      {
+        "name": "place_along_wall",
+        "description": "Places an object along a wall.",
+        "parameters": [
+          {"name": "obj_desc", "type": "string", "required": true},
+          {"name": "wall", "type": "string", "required": true},
+          {"name": "position", "type": "float", "required": false, "default": 0.5},
+          {"name": "wall_distance", "type": "float", "required": false, "default": 0.2}
+        ]
+      },
+      {
+        "name": "arrange_in_group",
+        "description": "Arranges multiple objects in a formation.",
+        "parameters": [
+          {"name": "obj_descs", "type": "list[string]", "required": true},
+          {"name": "formation", "type": "string", "required": false, "default": "circle"},
+          {"name": "center_x", "type": "float", "required": false, "default": null},
+          {"name": "center_y", "type": "float", "required": false, "default": null},
+          {"name": "spacing", "type": "float", "required": false, "default": 0.5},
+          {"name": "facing", "type": "string", "required": false, "default": "inward"}
+        ]
+      },
+      {
+        "name": "place_relative_multi",
+        "description": "Places an object relative to multiple reference objects.",
+        "parameters": [
+          {"name": "target_desc", "type": "string", "required": true},
+          {"name": "ref_descs", "type": "list[string]", "required": true},
+          {"name": "directions", "type": "list[string]", "required": true},
+          {"name": "distances", "type": "list[float]", "required": true}
+        ]
+      }
+    ]
+  }
