@@ -4,7 +4,7 @@
 
 This project implements a natural language-driven 3D scene generation system that enables users to create and manipulate virtual environments through simple text commands. The system interprets natural language instructions, converts them to a domain-specific language (DSL), and executes spatial operations in a 3D environment, with intelligent object placement and constraint handling.
 
-![System Architecture](images/architecture.png)
+![System Architecture](images/architecture.jpg)
 
 - **Natural Language Understanding**: Process free-form text instructions for scene manipulation
 - **Domain-Specific Language**: Convert natural language to executable DSL commands
@@ -45,14 +45,14 @@ The system supports various scene manipulation operations including:
 - **Agentic LLM**: Determines appropriate styles and architectural elements for coherent scenes
 
 ## Examples
-![test case 1](images/test_case_1.png)
+![test case 1](images/test_case_1.jpg)
 
 ### Example 1: Moving Objects
 
 **Input**: "Move the chair to the left by some distance"  
 **Output**: System attempts placement with collision detection and constraint satisfaction
 
-![test case 2](images/test_case_2.png)
+![test case 2](images/test_case_2.jpg)
 ### Example 2: Placing Objects with Relationships
 
 **Input**: "Place a chair in front of the sofa by 0.6m"  
